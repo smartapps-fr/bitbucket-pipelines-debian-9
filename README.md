@@ -16,7 +16,7 @@ Docker image at [smartapps/bitbucket-pipelines-debian-9](https://hub.docker.com/
  - [MariaDB](https://mariadb.org/) 10.1 (mostly compatible with [MySQL](https://www.mysql.com/) 5.6) (user `root:root`)
  - [PHP](http://www.php.net/) 7.0 (default) & 7.1 (use interpreters `/usr/bin/php7.0` & `/usr/bin/php7.1`, as [described here](https://pehapkari.cz/blog/2017/03/27/multiple-php-versions-the-easy-way/))
  - [Ruby](https://www.ruby-lang.org/) 2.3
- - [Node.js](https://nodejs.org/) 6.x LTS (you can use [`n`](https://github.com/tj/n) to interactively manage your Node.js versions)
+ - [Node.js](https://nodejs.org/) 8.x LTS (you can use [`n`](https://github.com/tj/n) to interactively manage your Node.js versions)
  - Latest [Composer](https://getcomposer.org/), [Gulp](http://gulpjs.com/), [Webpack](https://webpack.github.io/), [Mocha](https://mochajs.org/), [Grunt](http://gruntjs.com/), [PHPUnit](https://phpunit.de/), [Codeception](https://codeception.com/), [Yarn](https://yarnpkg.com/), [n](https://github.com/tj/n)
 
 ## Sample `bitbucket-pipelines.yml`
