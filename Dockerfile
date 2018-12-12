@@ -13,7 +13,7 @@ RUN \
  /usr/sbin/update-locale LANG=en_US.UTF-8 &&\
  echo "mysql-server mysql-server/root_password password root" | debconf-set-selections &&\
  echo "mysql-server mysql-server/root_password_again password root" | debconf-set-selections &&\
- apt-get -y --no-install-recommends install ca-certificates gnupg git subversion imagemagick openssh-client curl software-properties-common gettext zip default-mysql-server default-mysql-client apt-transport-https ruby python python3 perl memcached geoip-database make &&\
+ apt-get -y --no-install-recommends install ca-certificates gnupg git subversion imagemagick openssh-client curl software-properties-common gettext zip default-mysql-server default-mysql-client apt-transport-https ruby python python3 perl memcached geoip-database make ffmpeg &&\
  curl -sSL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - &&\
  curl -sSL https://packages.sury.org/php/apt.gpg | apt-key add - &&\
  echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list &&\
