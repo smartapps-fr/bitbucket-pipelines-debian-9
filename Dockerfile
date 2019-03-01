@@ -23,7 +23,7 @@ RUN \
   php7.1-apcu php7.1-bcmath php7.1-cli php7.1-curl php7.1-gd php7.1-geoip php7.1-gettext php7.1-imagick php7.1-intl php7.1-json php7.1-mbstring php7.1-mcrypt php7.1-mysql php7.1-sqlite3 php7.1-xdebug php7.1-xml php7.1-xmlrpc php7.1-zip php7.1-memcached \
   php7.0-apcu php7.0-bcmath php7.0-cli php7.0-curl php7.0-gd php7.0-geoip php7.0-gettext php7.0-imagick php7.0-intl php7.0-json php7.0-mbstring php7.0-mcrypt php7.0-mysql php7.0-sqlite3 php7.0-xdebug php7.0-xml php7.0-xmlrpc php7.0-zip php7.0-memcached \
   nodejs yarn &&\
- apt-get autoclean && apt-get clean && apt-get autoremove &&\
+ apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/* /var/log/* &&\
  update-alternatives --set php /usr/bin/php7.0
 
 RUN \
@@ -34,7 +34,7 @@ RUN \
 
 RUN \
  curl -sSL https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/bin &&\
- curl -sSL https://phar.phpunit.de/phpunit.phar -o /usr/bin/phpunit  && chmod +x /usr/bin/phpunit  &&\
+ curl -sSL https://phar.phpunit.de/phpunit.phar -o /usr/bin/phpunit  && chmod +x /usr/bin/phpunit &&\
  curl -sSL http://codeception.com/codecept.phar -o /usr/bin/codecept && chmod +x /usr/bin/codecept &&\
  npm install --no-color --production --global gulp-cli webpack mocha grunt n &&\
- rm -rf /root/.npm /root/.composer /tmp/* /var/lib/apt/lists/*
+ rm -rf /root/.npm /tmp/* /var/tmp/* /var/lib/apt/lists/* /var/log/*
