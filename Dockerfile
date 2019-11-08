@@ -20,6 +20,7 @@ RUN \
  echo "deb https://packages.sury.org/php/ stretch main" | tee /etc/apt/sources.list.d/deb.sury.org.list &&\
  curl -sSL https://deb.nodesource.com/setup_8.x | bash - &&\
  apt-get -y --no-install-recommends install \
+  php7.2-apcu php7.2-bcmath php7.2-cli php7.2-curl php7.2-gd php7.2-geoip php7.2-gettext php7.2-imagick php7.2-intl php7.2-json php7.2-mbstring               php7.2-mysql php7.2-sqlite3 php7.2-xdebug php7.2-xml php7.2-xmlrpc php7.2-zip php7.2-memcached \
   php7.1-apcu php7.1-bcmath php7.1-cli php7.1-curl php7.1-gd php7.1-geoip php7.1-gettext php7.1-imagick php7.1-intl php7.1-json php7.1-mbstring php7.1-mcrypt php7.1-mysql php7.1-sqlite3 php7.1-xdebug php7.1-xml php7.1-xmlrpc php7.1-zip php7.1-memcached \
   php7.0-apcu php7.0-bcmath php7.0-cli php7.0-curl php7.0-gd php7.0-geoip php7.0-gettext php7.0-imagick php7.0-intl php7.0-json php7.0-mbstring php7.0-mcrypt php7.0-mysql php7.0-sqlite3 php7.0-xdebug php7.0-xml php7.0-xmlrpc php7.0-zip php7.0-memcached \
   nodejs yarn &&\
@@ -30,7 +31,9 @@ RUN \
  sed -ri -e "s/^variables_order.*/variables_order=\"EGPCS\"/g" /etc/php/7.0/cli/php.ini &&\
  echo "xdebug.max_nesting_level=250" >> /etc/php/7.0/mods-available/xdebug.ini &&\
  sed -ri -e "s/^variables_order.*/variables_order=\"EGPCS\"/g" /etc/php/7.1/cli/php.ini &&\
- echo "xdebug.max_nesting_level=250" >> /etc/php/7.1/mods-available/xdebug.ini
+ echo "xdebug.max_nesting_level=250" >> /etc/php/7.1/mods-available/xdebug.ini &&\
+ sed -ri -e "s/^variables_order.*/variables_order=\"EGPCS\"/g" /etc/php/7.2/cli/php.ini &&\
+ echo "xdebug.max_nesting_level=250" >> /etc/php/7.2/mods-available/xdebug.ini
 
 RUN \
  curl -sSL https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/bin &&\
