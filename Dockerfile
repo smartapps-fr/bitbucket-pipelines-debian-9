@@ -23,6 +23,7 @@ RUN \
   php7.2-apcu php7.2-bcmath php7.2-cli php7.2-curl php7.2-gd php7.2-geoip php7.2-gettext php7.2-imagick php7.2-intl php7.2-json php7.2-mbstring               php7.2-mysql php7.2-sqlite3 php7.2-xdebug php7.2-xml php7.2-xmlrpc php7.2-zip php7.2-memcached \
   php7.1-apcu php7.1-bcmath php7.1-cli php7.1-curl php7.1-gd php7.1-geoip php7.1-gettext php7.1-imagick php7.1-intl php7.1-json php7.1-mbstring php7.1-mcrypt php7.1-mysql php7.1-sqlite3 php7.1-xdebug php7.1-xml php7.1-xmlrpc php7.1-zip php7.1-memcached \
   php7.0-apcu php7.0-bcmath php7.0-cli php7.0-curl php7.0-gd php7.0-geoip php7.0-gettext php7.0-imagick php7.0-intl php7.0-json php7.0-mbstring php7.0-mcrypt php7.0-mysql php7.0-sqlite3 php7.0-xdebug php7.0-xml php7.0-xmlrpc php7.0-zip php7.0-memcached \
+  php-memcache \
   nodejs yarn &&\
  apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/* /var/log/* &&\
  update-alternatives --set php /usr/bin/php7.0
